@@ -1,0 +1,84 @@
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    SignupScreen:
+<LoginScreen>:
+    
+    name: 'Login'
+    btnLogin_ : btnLogin
+    txtUsername_ : txtUsername
+    txtPassword_ : txtPassword
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Login'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doLogin()  
+
+    MDRectangleFlatButton:
+        text: 'Signup'
+        pos_hint: {'center_x':0.5,'center_y':0.5}
+        on_press: root.manager.current = 'Signup'
+    
+<HomeScreen>:
+    name: 'Beranda'
+    MDLabel:
+        text: 'Beranda'
+        halign: 'center'
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+        
+<SignupScreen>:
+    name: 'Signup'
+    btnSave_SU : btnSave
+    txtUsername_SU : txtUsername
+    txtPassword_SU : txtPassword
+    
+    MDLabel:
+        text: 'SignUp'
+        halign: 'center'
+        
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':0.5,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+    
+    TextInput:
+        id: txtUsername
+        pos_hint: {'center_x':0.5,'center_y':0.8}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Username'
+    
+    TextInput:
+        id: txtPassword
+        pos_hint: {'center_x':0.5,'center_y':0.7}
+        size_hint: (.2, None)
+        height: 30
+        multiline: False
+        text: 'Password'
+    
+    MDRectangleFlatButton:
+        id: btnSave
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.6}
+        on_press: root.doSaveSignUp()  
